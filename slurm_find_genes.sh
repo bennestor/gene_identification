@@ -47,14 +47,5 @@ module load samtools/1.15--h3843a85_0
 module load blast/2.12.0--pl5262h3289130_0
 module load bedtools/2.30.0--h468198e_3
 
-#time srun -m block:block:block bash find_genes_v2.sh -s "Nelumbo Medicago Eucalyptus Vitis Zea" -q nrt2 > 1_find_genes_out/nrt2_other.txt
-#time srun -m block:block:block bash find_genes_v2.sh -s "Nelumbo Medicago Eucalyptus Vitis Zea" -q nar2 -l 150 > 1_find_genes_out/nar2_other.txt
-#time srun -m block:block:block bash find_genes_v2.sh -s "Hakea Telopea Macadamia" -q npf > results_npf_proteaceae
-#time srun -m block:block:block bash find_genes_v2.sh -s "Nelumbo Medicago Eucalyptus Vitis Zea" -q npf -t 64 > 1_find_genes_out/npf_other.txt
-#time srun -m block:block:block bash find_genes_v2.sh -s "Amborella Oryza" -q "pht2" -e 1e-25 -v 1e-40 -l 300 -t 24 > 1_find_genes_out/pht2.txt
-#time srun -m block:block:block bash find_genes_v2.sh -s "Amborella Oryza" -q "pht3" -e 1e-25 -v 1e-40 -l 150 -t 24 > 1_find_genes_out/pht3.txt
-#time srun -m block:block:block bash find_genes_v2.sh -s "Amborella Oryza" -q "pht4" -e 1e-25 -v 1e-40 -l 200 -t 24 > 1_find_genes_out/pht4.txt
-#time srun -m block:block:block bash find_genes_v2.sh -s "Amborella Oryza" -q "pht5" -e 1e-25 -v 1e-40 -l 350 -t 24 > 1_find_genes_out/pht5.txt
-#time srun -m block:block:block bash find_genes_v2.sh -s "Amborella" -q "pho1" -r Arabidopsis_Oryza -e 1e-40 -v 1e-50 -t 24 > 1_find_genes_out/pho1.txt
-#time srun -m block:block:block bash find_genes_v2.sh -q "amt1 amt2" -r Arabidopsis_Oryza -e 1e-40 -v 1e-50 -t 24 > 1_find_genes_out/amt.txt
-time srun -m block:block:block bash find_genes_v2.sh -q "clc slac" -r Arabidopsis -e 1e-40 -v 1e-50 -t 24 > 1_find_genes_out/clc_slac.txt
+#Example
+time srun -m block:block:block bash find_genes_v2.sh -q "pht1 nrt2" -r Arabidopsis -e 1e-40 -v 1e-50 -t 24 > 1_find_genes_out/nrt2_pht1.txt
