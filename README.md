@@ -38,4 +38,5 @@ At the top of the script are lines for default variables to be set. Below that i
 The script requires BLAST (blastp and blastn) and HMMER to be installed and available on $PATH
 
 A phylogenetic tree making script is also available: make_trees_v2.sh, which requires RAXML.
-SLURM scripts for running both scripts on HPCs are also available.
+
+SLURM scripts for running both scripts on computer clusters that use SLURM are also available.
