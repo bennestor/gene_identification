@@ -18,14 +18,12 @@
 #SBATCH --partition=work
 #SBATCH --output=2_make_trees_job
 #SBATCH --error=2_make_trees_err
-#SBATCH --mail-user=21979717@student.uwa.edu.au
 
 # Generic SLURM commands
 #SBATCH --ntasks=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --clusters=setonix
 #SBATCH --account=pawsey0149
-#SBATCH --mail-type=ALL
 #SBATCH --export=NONE 
 source /software/projects/pawsey0149/groupEnv/ivec/groupResource.cfg
 
