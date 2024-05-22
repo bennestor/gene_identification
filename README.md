@@ -1,4 +1,5 @@
 This script (find_genes_v2.sh) is used to identify homologous protein sequences from multiple gene families in multiple genomes using confirmation from BLAST statistics, HMMER, and checks to the genome sequence to ensure no incorrectly predicted proteins were missed.
+The procedures followed are based on the review Nestor et al. (2023). Approaches to increase the validity of gene family identification using manual homology search tools. Genetica. https://doi.org/10.1007/s10709-023-00196-8.
 
 1. If using own query sequences, set up a directory named {QUERIES}/{TRANS}/ (e.g. blast_queries/nrt2) with the name '{REF}_{TRANS}_query.fa' (e.g. Arabidopsis_nrt2_query.fa). The ${QUERIES} varaiable, among other directory variables, is specified at the top of the script.
 Otherwise, proteins can be extracted from the reference proteome based on annotations (regex will need to be specified inside the script under the first section '#Extract proteins from reference. Edit depending on annotations and proteins.').
@@ -20,7 +21,7 @@ Available flags:
     -s <"species list"> #specify this as a quoted list separated by spaces (e.g. -s "Arabidopsis Gossypium Oryza"). Species proteomes should be named as {SPECIES)_proteome.fa (e.g. Arabidopsis_proteome.fa)
     -r <reference species> #Name of reference species that matches the proteome name (e.g. Arabidopsis to match Arabidopsis_proteome.fa)
     -q <"query gene family name"> #also specify as quoted list (e.g. -q "pht1 nrt2 npf")
-    -e <initial BLAST evalue> #BLAST e-value used for the initial BLAST search. Hits that pass and don't pass the e-value are printed out into separate files in the ${TRANS}/${SPECIES}/ folder. The annotations of these hits can be examined to determine if a different BLAST e-value is needed (See Nestor et al., 2023. Approaches to increase the validity of gene family identification using manual homology search tools. https://doi.org/10.1007/s10709-023-00196-8)
+    -e <initial BLAST evalue> #BLAST e-value used for the initial BLAST search. Hits that pass and don't pass the e-value are printed out into separate files in the ${TRANS}/${SPECIES}/ folder. The annotations of these hits can be examined to determine if a different BLAST e-value is needed see Nestor et al. (2023) for guidance on setting an appropriate E-value.
     -c <initial BLAST coverage> #BLAST coverage as an optional filter. Leave as 0 in default variables list in script if you don't want to filter by coverage %.
     -E <re-BLAST evalue> #BLAST e-value for re-BLAST (disabled by default)
     -C <re-BLAST coverage> #BLAST coverage for re-BLAST (disabled by default)
