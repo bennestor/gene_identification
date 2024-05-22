@@ -44,20 +44,5 @@ echo "========================================="
 cd /scratch/pawsey0149/bnestor/2020_11_20_Transporters/0-scripts
 conda activate raxml
 
-#time srun -m block:block:block make_trees.sh -n proteaceae -s "Hakea Telopea Macadamia Arabidopsis Amborella" -g nrt2 -o AtrNRT2
-#time srun -m block:block:block make_trees.sh -n proteaceae -s "Hakea Telopea Macadamia Arabidopsis Amborella" -g nar2 -o AtrNAR2
-#time srun -m block:block:block make_trees.sh -n all -s "Hakea Telopea Macadamia Nelumbo Medicago Eucalyptus Vitis Zea Arabidopsis Amborella" -g nrt2 -o AtrNRT2
-#time srun -m block:block:block make_trees.sh -n all -s "Hakea Telopea Macadamia Nelumbo Medicago Eucalyptus Vitis Oryza Zea Arabidopsis Amborella" -g nrt2 -o AtrNRT2 -b 500
-#time srun -m block:block:block make_trees.sh -n all -s "Hakea Telopea Macadamia Nelumbo Medicago Eucalyptus Vitis Oryza Zea Arabidopsis Amborella" -g nar2 -o AtrNAR2 -b 1000
-
-#time srun -m block:block:block make_trees.sh -t 120 -n proteaceae -s "Hakea Telopea Macadamia Arabidopsis Amborella" -g npf -o AtrNPF6.1 -b 50
-#time srun -m block:block:block make_trees.sh -t 120 -n all -s "Hakea Telopea Macadamia Nelumbo Medicago Eucalyptus Vitis Zea Arabidopsis Amborella" -g npf -o AtrNPF6.1 -b 10
-#time srun -m block:block:block make_trees.sh -t 128 -n all -g pht2 -o AtrPHT2.1 -b 1000
-#time srun -m block:block:block make_trees.sh -t 4 -n all -g pht3 -o AtrPHT3.1 -b 1000
-#time srun -m block:block:block make_trees.sh -t 8 -n all -g pht4 -o AtrPHT4.1 -b 500
-#time srun -m block:block:block make_trees.sh -t 4 -n all -g pht5 -o AtrPHT5.1 -b 1000
-time srun -m block:block:block make_trees.sh -t 16 -n all -g pho1 -o AtrPHO1-1 -b 500
-#time srun -m block:block:block make_trees.sh -t 60 -n all -g amt1 -o Amborella_AMT1_1 -b 10
-#time srun -m block:block:block make_trees.sh -t 60 -n all -g amt2 -o Amborella_AMT2_1 -b 10
-#time srun -m block:block:block make_trees.sh -t 60 -n all -g clc -o Amborella_CLC_1 -b 10
-#time srun -m block:block:block make_trees.sh -t 60 -n all -g slac -o Amborella_SLAC_1 -b 10
+#Example command
+time srun -m block:block:block make_trees.sh -t 16 -n all -g pho1 -o AtrPHT1 -b 1000
