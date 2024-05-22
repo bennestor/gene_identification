@@ -3,7 +3,7 @@ set -euo pipefail
 
 ## DEFINE VARIABLES
 
-#Set default variables. Use "" for lists
+#Set default variables. Use "" for lists (User edits here)
 SPECIES_LIST="Amborella Arabidopsis Eucalyptus Hakea Macadamia Medicago Nelumbo Oryza Protea Telopea Vitis Zea"
 NAME="all"
 REF=Arabidopsis
@@ -12,11 +12,11 @@ BOOTSTRAPS=1000
 OUTGROUP=AtrNRT2
 THREADS=4
 
-#Path variables
+#Path variables (User edits here)
 QUERIES=${MYSCRATCH}/2020_11_20_Transporters/1-data/blast_queries
 FINALFAS=${MYSCRATCH}/2020_11_20_Transporters/6-final_fas
 
-#Check for user defined variables
+#Check for user defined variables (Don't need to edit here or below)
 while getopts s:n:g:r:b:o:t:h flag
 do
   case "$flag" in
