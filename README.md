@@ -1,6 +1,6 @@
-This script (find_genes_v2.sh) is used to identify homologous protein sequences from multiple gene families in multiple genomes using confirmation from BLAST statistics, HMMER, and checks to the genome sequence to ensure no incorrectly predicted proteins were missed.
+This script (find_genes_v2.sh) is used to identify homologous protein sequences from multiple gene families in multiple genomes using confirmation from BLAST statistics, HMMER, and checks to the genome sequence to ensure no incorrectly predicted proteins were missed. 
 
-The procedures followed are based on this review: Nestor et al. (2023). Approaches to increase the validity of gene family identification using manual homology search tools. Genetica. https://doi.org/10.1007/s10709-023-00196-8.
+The procedures followed are based on this review: Nestor et al. (2023). Approaches to increase the validity of gene family identification using manual homology search tools. Genetica. https://doi.org/10.1007/s10709-023-00196-8. See the Wiki for an explanation of the process described in that article.
 
 1. If using own query sequences, set up a directory named {QUERIES}/{TRANS}/ (e.g. blast_queries/nrt2) with the name '{REF}_{TRANS}_query.fa' (e.g. Arabidopsis_nrt2_query.fa). The ${QUERIES} varaiable, among other directory variables, is specified at the top of the script.
 Otherwise, proteins can be extracted from the reference proteome based on annotations (regex will need to be specified inside the script under the first section '#Extract proteins from reference. Edit depending on annotations and proteins.').
