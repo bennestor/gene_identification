@@ -3,7 +3,7 @@ set -euxo pipefail
 
 ## DEFINE VARIABLES
 
-#Set default variables. Use "" for lists
+#Set default variables. Use "" for lists (User edits here)
 SPECIES_LIST="Amborella Eucalyptus Hakea Macadamia Medicago Nelumbo Oryza Protea Telopea Vitis Zea"
 REF=Arabidopsis
 TRANS_LIST=""
@@ -17,7 +17,7 @@ EVALUE4=1e-5
 FLANK=900
 THREADS=64
 
-#Path variables
+#Path variables (User edits here)
 BLASTDB=$MYSCRATCH/2020_11_20_Transporters/1-data/blast_DB
 PROTEOMES=$MYSCRATCH/2020_11_20_Transporters/1-data/proteomes
 BLASTRES=$MYSCRATCH/2020_11_20_Transporters/2-blasts
@@ -29,7 +29,7 @@ GENOMES=${MYSCRATCH}/2020_11_20_Transporters/1-data/genomes
 QUERIES=${MYSCRATCH}/2020_11_20_Transporters/1-data/blast_queries
 AUG=${MYSCRATCH}/2020_11_20_Transporters/0-scripts/Augustus/bin
 
-#Steps
+#Steps (No need to edit here or below)
 REBLAST=false
 INITBLASTFILTER=false
 REBLASTFILTER=false
@@ -41,15 +41,15 @@ print_usage () {
   echo -e "
 Usage: $0 [-s <"species list">] [-r <reference species>] [-q <"query gene family name">] [-e <initial BLAST evalue>] \
 [-c <initial BLAST coverage>] [-E <re-BLAST evalue>] [-C <re-BLAST coverage] [-l <min protein length>] [-v <HMM evalue>] \
-[-n <genome blast evalue] [-t <threads for each program>] [-f <flanking range>] [-i] [-j] [-m] [-g] [-h] [-I]
+[-n <genome blast evalue] [-t <threads for each program>] [-f <flanking range>] [-i] [-j] [-m] [-g] [-h]
 
 This script identifies specified families of proteins in species using BLAST and HMMsearch tools. 
 
 Firstly, proteins are extracted from the reference proteome based on annotations (regex will need to be specified inside the script). \
-If using own query sequences, place in {QUERIES}/{TRANS}/ with the name '{REF}_{TRANS}_proteome_re.fas'.
+If using own query sequences, place in {QUERIES}/{TRANS}/ with the name '{REF}_{TRANS}_query.fa'.
 Secondly, the extracted protein sequences are BLAST searched in each specified proteome using strict evalue (EVALUE1), coverage (COV1%),\
 and length (LENGTH AA) cutoffs.
-Thirdly, the full protein sequences from the initial BLAST are re-BLAST searched in the proteomes to retrieve more divergent \
+Thirdly (DISABLED BY DEFAULT), the full protein sequences from the initial BLAST are re-BLAST searched in the proteomes to retrieve more divergent \
 sequences (similar to the PSI-BLAST tool). The filtering uses less strict evalue (EVALUE2) and coverage (COV2) cutoffs, but keeps the same lengths. This step can be skipped using the -R flag.
 Fourthly, the retrieved proteins are searched for domains generated from the intial BLAST protein sequences using HMMsearch and filtered by evalue EVALUE3. \ 
 Domains from pfam can be used instead if placed as {HMM}/{TRANS}/{TRANS}.prof
@@ -434,6 +434,5 @@ elif [ $HMMFILTER = true ] ; then
 elif [ $GENOMEFILTER = true ] ; then
   check_genomes_filter ; combine
 else 
-  extract_reference ; iBLAST ; iBLASTfilter ; reBLAST ; reBLASTfilter ; HMM_search ; HMM_search_filter ; combine
+  extract_reference ; iBLAST ; iBLASTfilter ; reBLAST ; reBLASTfilter ; HMM_search ; HMM_search_filter ; check_genomes ; check_genomes_filter ; combine
 fi
-#Removed check_genomes and check_genomes_filter 02/06/23
