@@ -41,4 +41,4 @@ The script requires BLAST (blastp and blastn) and HMMER to be installed and avai
 
 A phylogenetic tree making script is also available: make_trees_v2.sh, which requires RAXML.
 
-SLURM scripts for running both scripts on computer clusters that use SLURM are also available.
+SLURM scripts for running both scripts on computer clusters that use SLURM are also available. These are formatted for the Setonix server at Pawsey Australia, but can be modified for any cluster using SLURM job submitter.
