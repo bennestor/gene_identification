@@ -18,14 +18,12 @@
 #SBATCH --partition=work
 #SBATCH --output=1_find_genes_job
 #SBATCH --error=1_find_genes_err
-#SBATCH --mail-user=21979717@student.uwa.edu.au
 
 # Generic SLURM commands
 #SBATCH --ntasks=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --clusters=setonix
 #SBATCH --account=pawsey0149
-#SBATCH --mail-type=ALL
 #SBATCH --export=NONE 
 source /software/projects/pawsey0149/groupEnv/ivec/groupResource.cfg
 
